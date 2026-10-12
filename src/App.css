@@ -1,0 +1,389 @@
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 7%;
+  background: #fffdf8;
+  border-bottom: 1px solid #eadfce;
+  animation: slideDown 0.6s ease both;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #49352a;
+}
+
+.brand-icon {
+  color: #9a6b4c;
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  padding: 10px 16px;
+  border-radius: 30px;
+  color: #806c5a;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link:hover {
+  background: #f2e7d8;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: #795548;
+  color: #fffaf2;
+}
+
+.page-container {
+  width: min(1120px, 86%);
+  margin: 0 auto;
+  flex: 1;
+  padding-bottom: 60px;
+}
+
+.hero {
+  padding: 76px 0 55px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: #967453;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  color: #a47552;
+  font-style: italic;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #897866;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  margin: 0;
+}
+
+.section-heading p {
+  margin: 8px 0 0;
+  color: #95816e;
+  font-size: 0.9rem;
+}
+
+.student-count {
+  white-space: nowrap;
+  background: #e9ddcc;
+  color: #795548;
+  border-radius: 30px;
+  padding: 9px 15px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 24px;
+  background: #fffdf8;
+  border: 1px solid #eee3d5;
+  border-radius: 22px;
+  box-shadow: 0 5px 20px #62432a08;
+  animation: fadeUp 0.55s ease both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.student-card:nth-child(2) { animation-delay: 0.08s; }
+.student-card:nth-child(3) { animation-delay: 0.16s; }
+.student-card:nth-child(4) { animation-delay: 0.24s; }
+.student-card:nth-child(5) { animation-delay: 0.32s; }
+.student-card:nth-child(6) { animation-delay: 0.4s; }
+
+.student-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px #62432a12;
+  border-color: #d8c0a5;
+}
+
+.student-avatar {
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #eadcc9;
+  color: #795548;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.student-card:hover .student-avatar {
+  transform: rotate(-5deg) scale(1.06);
+}
+
+.student-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-info h3 {
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  margin: 0 0 7px;
+}
+
+.student-info p {
+  color: #927e6a;
+  font-size: 0.84rem;
+  margin: 0 0 8px;
+}
+
+.department {
+  display: inline-block;
+  background: #f5eee4;
+  color: #87684d;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 0.7rem;
+}
+
+.favourite-btn, .remove-btn, .explore-btn {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 13px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.favourite-btn {
+  background: #795548;
+  color: #fffaf2;
+}
+
+.favourite-btn:hover:not(:disabled) {
+  background: #49352a;
+  transform: scale(1.04);
+}
+
+.favourite-btn.added {
+  background: #e9ddcc;
+  color: #795548;
+  cursor: default;
+}
+
+.favourite-btn:disabled {
+  opacity: 1;
+}
+
+.remove-btn {
+  background: #f1e3d6;
+  color: #795548;
+}
+
+.remove-btn:hover {
+  background: #795548;
+  color: white;
+  transform: scale(1.04);
+}
+
+.empty-state {
+  text-align: center;
+  background: #fffdf8;
+  border: 1px dashed #d8c0a5;
+  border-radius: 26px;
+  padding: 55px 20px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.empty-icon {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #f1e6d8;
+  color: #9a6b4c;
+  font-size: 2.4rem;
+}
+
+.empty-state h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  color: #927e6a;
+  line-height: 1.7;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 14px;
+  background: #795548;
+  color: #fffaf2;
+}
+
+.explore-btn:hover {
+  background: #49352a;
+  transform: translateY(-2px);
+}
+
+.footer {
+  padding: 24px;
+  text-align: center;
+  color: #a18b76;
+  font-size: 0.82rem;
+  border-top: 1px solid #eadfce;
+  background: #fffaf3;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 9px 11px;
+    font-size: 0.85rem;
+  }
+
+  .page-container {
+    width: 90%;
+  }
+
+  .hero {
+    padding: 55px 0 38px;
+  }
+
+  .student-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    padding: 8px;
+    font-size: 0.78rem;
+  }
+
+  .student-card {
+    gap: 12px;
+    padding: 17px;
+    flex-wrap: wrap;
+  }
+
+  .student-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .favourite-btn, .remove-btn {
+    margin-left: auto;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
